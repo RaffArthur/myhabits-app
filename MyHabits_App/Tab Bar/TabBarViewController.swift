@@ -8,8 +8,10 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    
+
     // MARK: - Properties
+    let habitsVC = UINavigationController(rootViewController: HabitsViewController())
+    let infoVC = UINavigationController(rootViewController: InfoViewController())
     let habitsBarItem: UITabBarItem = {
         let tbi = UITabBarItem()
         tbi.image = UIImage(systemName: "rectangle.grid.1x2")
@@ -26,25 +28,18 @@ class TabBarViewController: UITabBarController {
 
         return tbi
     }()
-    
+
     // MARK: - View funcs
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        delegate = self
-    
-        let habitsViewController = HabitsViewController()
-        let infoViewController = InfoViewController()
-        let tabBarList = [habitsViewController, infoViewController]
+        habitsVC.tabBarItem = habitsBarItem
+        infoVC.tabBarItem = infoBarItem
 
-        habitsViewController.tabBarItem = habitsBarItem
-        infoViewController.tabBarItem = infoBarItem
+        let tabBarList = [habitsVC, infoVC]
 
         viewControllers = tabBarList
     }
 }
 
-extension TabBarViewController: UITabBarControllerDelegate {
-    
-}
+

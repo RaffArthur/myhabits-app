@@ -12,6 +12,8 @@
 		753E62B02557F93E00F14F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753E62AE2557F93E00F14F6B /* LaunchScreen.storyboard */; };
 		753E62BA255800FF00F14F6B /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E62B9255800FF00F14F6B /* HabitsStore.swift */; };
 		753E62CB2558145700F14F6B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E62CA2558145700F14F6B /* TabBarViewController.swift */; };
+		7547144525603CDD005B734D /* UIViewToAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547144425603CDD005B734D /* UIViewToAutoLayout.swift */; };
+		7547144B25603FF4005B734D /* InfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547144A25603FF4005B734D /* InfoText.swift */; };
 		75A0EBA725581B0D001910F8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0EBA625581B0D001910F8 /* InfoViewController.swift */; };
 		75A0EBAA25581B24001910F8 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0EBA925581B24001910F8 /* HabitsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 		753E62B12557F93E00F14F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753E62B9255800FF00F14F6B /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		753E62CA2558145700F14F6B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		7547144425603CDD005B734D /* UIViewToAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewToAutoLayout.swift; sourceTree = "<group>"; };
+		7547144A25603FF4005B734D /* InfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoText.swift; sourceTree = "<group>"; };
 		75A0EBA625581B0D001910F8 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		75A0EBA925581B24001910F8 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,10 +62,11 @@
 		753E62A22557F93E00F14F6B /* MyHabits_App */ = {
 			isa = PBXGroup;
 			children = (
+				7547144325603C8D005B734D /* Helpers */,
+				753E62CD2558182C00F14F6B /* Tab Bar */,
 				75A0EBA425581AB7001910F8 /* Habits */,
 				75A0EBA325581AAF001910F8 /* Info */,
-				753E62CD2558182C00F14F6B /* Tab Bar */,
-				753E62B8255800AA00F14F6B /* Data Source */,
+				753E62B8255800AA00F14F6B /* Storage */,
 				753E62A32557F93E00F14F6B /* AppDelegate.swift */,
 				753E62AC2557F93E00F14F6B /* Assets.xcassets */,
 				753E62AE2557F93E00F14F6B /* LaunchScreen.storyboard */,
@@ -70,12 +75,13 @@
 			path = MyHabits_App;
 			sourceTree = "<group>";
 		};
-		753E62B8255800AA00F14F6B /* Data Source */ = {
+		753E62B8255800AA00F14F6B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				753E62B9255800FF00F14F6B /* HabitsStore.swift */,
+				7547144A25603FF4005B734D /* InfoText.swift */,
 			);
-			path = "Data Source";
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		753E62CD2558182C00F14F6B /* Tab Bar */ = {
@@ -84,6 +90,14 @@
 				753E62CA2558145700F14F6B /* TabBarViewController.swift */,
 			);
 			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		7547144325603C8D005B734D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7547144425603CDD005B734D /* UIViewToAutoLayout.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		75A0EBA325581AAF001910F8 /* Info */ = {
@@ -128,6 +142,9 @@
 		753E62982557F93E00F14F6B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					infotext,
+				);
 				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
@@ -173,8 +190,10 @@
 			files = (
 				753E62BA255800FF00F14F6B /* HabitsStore.swift in Sources */,
 				753E62CB2558145700F14F6B /* TabBarViewController.swift in Sources */,
+				7547144B25603FF4005B734D /* InfoText.swift in Sources */,
 				75A0EBA725581B0D001910F8 /* InfoViewController.swift in Sources */,
 				75A0EBAA25581B24001910F8 /* HabitsViewController.swift in Sources */,
+				7547144525603CDD005B734D /* UIViewToAutoLayout.swift in Sources */,
 				753E62A42557F93E00F14F6B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +339,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurraff.MyHabits-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arthurraff.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,7 +357,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.arthurraff.MyHabits-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arthurraff.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
