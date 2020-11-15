@@ -16,6 +16,9 @@
 		7547144B25603FF4005B734D /* InfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547144A25603FF4005B734D /* InfoText.swift */; };
 		75A0EBA725581B0D001910F8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0EBA625581B0D001910F8 /* InfoViewController.swift */; };
 		75A0EBAA25581B24001910F8 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0EBA925581B24001910F8 /* HabitsViewController.swift */; };
+		75CAEE2125614C2A0015EB95 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CAEE2025614C2A0015EB95 /* HabitViewController.swift */; };
+		75CAEE24256188780015EB95 /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CAEE23256188780015EB95 /* ProgressCollectionViewCell.swift */; };
+		75CAEE2725618B7A0015EB95 /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CAEE2625618B7A0015EB95 /* HabitCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		7547144A25603FF4005B734D /* InfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoText.swift; sourceTree = "<group>"; };
 		75A0EBA625581B0D001910F8 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		75A0EBA925581B24001910F8 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		75CAEE2025614C2A0015EB95 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		75CAEE23256188780015EB95 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
+		75CAEE2625618B7A0015EB95 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +117,28 @@
 		75A0EBA425581AB7001910F8 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
-				75A0EBA925581B24001910F8 /* HabitsViewController.swift */,
+				75CAEE2A25618F000015EB95 /* Controllers */,
+				75CAEE2925618E8F0015EB95 /* Cells */,
 			);
 			path = Habits;
+			sourceTree = "<group>";
+		};
+		75CAEE2925618E8F0015EB95 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75CAEE23256188780015EB95 /* ProgressCollectionViewCell.swift */,
+				75CAEE2625618B7A0015EB95 /* HabitCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		75CAEE2A25618F000015EB95 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				75A0EBA925581B24001910F8 /* HabitsViewController.swift */,
+				75CAEE2025614C2A0015EB95 /* HabitViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,10 +216,13 @@
 				753E62BA255800FF00F14F6B /* HabitsStore.swift in Sources */,
 				753E62CB2558145700F14F6B /* TabBarViewController.swift in Sources */,
 				7547144B25603FF4005B734D /* InfoText.swift in Sources */,
+				75CAEE2125614C2A0015EB95 /* HabitViewController.swift in Sources */,
 				75A0EBA725581B0D001910F8 /* InfoViewController.swift in Sources */,
+				75CAEE24256188780015EB95 /* ProgressCollectionViewCell.swift in Sources */,
 				75A0EBAA25581B24001910F8 /* HabitsViewController.swift in Sources */,
 				7547144525603CDD005B734D /* UIViewToAutoLayout.swift in Sources */,
 				753E62A42557F93E00F14F6B /* AppDelegate.swift in Sources */,
+				75CAEE2725618B7A0015EB95 /* HabitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

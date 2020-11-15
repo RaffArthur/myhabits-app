@@ -7,43 +7,34 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {    
+class InfoViewController: UIViewController {
+    
+    // MARK: - Properties
     private lazy var infoTextHeader: UILabel = {
         let label = UILabel()
-        label.toAutoLayout()
-        label.text = "Привычка за 21 день"
+        label.text = String(describing: infoText.header)
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         
         return label
     }()
     private lazy var infoTextMain: UITextView = {
         let tf = UITextView()
-        tf.toAutoLayout()
-        tf.scrollRectToVisible(.infinite, animated: true)
-        tf.alwaysBounceVertical = true
         tf.showsVerticalScrollIndicator = true
         tf.textAlignment = .left
-        tf.isUserInteractionEnabled = true
-        tf.text = infoText.init().mainText
+        tf.isEditable = false
+        tf.isScrollEnabled = true
+        tf.text = String(describing: infoText.mainText)
         tf.font = UIFont.systemFont(ofSize: 17, weight: .regular)
 
         return tf
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupLayout()
-        
-        view.backgroundColor = .white
-        
-        title = "Информация"
-
-    }
-    
+    // MARK: - View Funcs
     private func setupLayout() {
-        view.addSubview(infoTextHeader)
-        view.addSubview(infoTextMain)
+        view.addSubviews(
+            infoTextHeader,
+            infoTextMain
+        )
         
         let constraints = [
             infoTextHeader.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 22),
@@ -56,5 +47,15 @@ class InfoViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(constraints)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupLayout()
+        
+        view.backgroundColor = .white
+        
+        title = "Информация"
     }
 }
