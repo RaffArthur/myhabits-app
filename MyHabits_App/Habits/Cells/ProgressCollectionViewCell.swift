@@ -10,7 +10,13 @@ import UIKit
 class ProgressCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    let habit = HabitsStore.shared
+    private var habitsStore: HabitsStore? {
+        didSet {
+            guard let habitsStore = habitsStore else { return }
+            
+            configure(habitsStore)
+        }
+    }
     private lazy var progressStatusText: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .semibold)
@@ -23,18 +29,23 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textColor = UIColor(named: "silver_mid")
-        label.text = String(describing: "\(Int(habit.todayProgress*0.01))%")
         
         return label
     }()
     private lazy var progressBar: UIProgressView = {
-        let pv = UIProgressView()
-        pv.progress = habit.todayProgress
-        pv.backgroundColor = UIColor(named: "silver")
+        let pv = UIProgressView(progressViewStyle: .bar)
+        pv.backgroundColor = UIColor(named: "silver_light")
         pv.layer.cornerRadius = 4
+        pv.layer.masksToBounds = true
         
         return pv
     }()
+    
+    // MARK: - Configures
+    func configure(_ habitsStore: HabitsStore) {
+        progressBar.setProgress(habitsStore.todayProgress, animated: true)
+        percentageProgress.text = String(describing: "\(Int(habitsStore.todayProgress * 100))%")
+    }
     
     // MARK: - Subviews Funcs
     func setupLayout() {
@@ -63,7 +74,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        setupLayout()
+        setupLayout()        
         
         backgroundColor = .white
         layer.cornerRadius = 8

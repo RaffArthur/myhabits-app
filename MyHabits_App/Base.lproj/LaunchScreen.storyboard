@@ -23,7 +23,7 @@
                                 <color key="textColor" name="indigo"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="119.99999999999991" placeholderIntrinsicHeight="120.00000000000017" image="main_icon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lk6-oZ-Spo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="119.99999999999991" placeholderIntrinsicHeight="120.00000000000017" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" image="main_icon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lk6-oZ-Spo">
                                 <rect key="frame" x="147" y="388" width="120" height="120"/>
                             </imageView>
                         </subviews>

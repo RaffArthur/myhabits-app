@@ -10,7 +10,7 @@ import UIKit
 class HabitCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    private var habit: Habit? {
+    var habit: Habit? {
         didSet {
             guard let habit = habit else { return }
             
@@ -20,6 +20,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     private lazy var habitHeaderText: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.numberOfLines = 2
         
         return label
     }()
@@ -39,15 +40,29 @@ class HabitCollectionViewCell: UICollectionViewCell {
         
         return label
     }()
-    private lazy var habitProgressCircle: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.isUserInteractionEnabled = true
-        view.layer.masksToBounds = true
-        view.layer.borderWidth = 3
+    lazy var habitProgressCircle: UIImageView = {
+        let iv = UIImageView()
+        iv.backgroundColor = .white
+        iv.isUserInteractionEnabled = true
         
-        return view
+        return iv
     }()
+    
+    // MARK: - Configures
+    func configure(_ habit: Habit) {
+        habitHeaderText.text = habit.name
+        habitHeaderText.textColor = habit.color
+        habitTimeText.text = habit.dateString
+        habitTimeIntervalText.text = String("Подряд \(habit.trackDates.count)")
+        
+        if habit.isAlreadyTakenToday {
+            habitProgressCircle.tintColor = habit.color
+            habitProgressCircle.image = UIImage(systemName: "checkmark.circle.fill")
+        } else {
+            habitProgressCircle.tintColor = habit.color
+            habitProgressCircle.image = UIImage(systemName: "circle")
+        }
+    }
     
     // MARK: - Subviews Funcs
     func setupLayout() {
@@ -59,7 +74,8 @@ class HabitCollectionViewCell: UICollectionViewCell {
         let constraints = [
             habitHeaderText.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             habitHeaderText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            
+            habitHeaderText.trailingAnchor.constraint(equalTo: habitProgressCircle.trailingAnchor, constant: -40),
+
             habitTimeText.topAnchor.constraint(equalTo: habitHeaderText.bottomAnchor, constant: 4),
             habitTimeText.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
@@ -68,8 +84,8 @@ class HabitCollectionViewCell: UICollectionViewCell {
             
             habitProgressCircle.heightAnchor.constraint(equalToConstant: 36),
             habitProgressCircle.widthAnchor.constraint(equalToConstant: 36),
-            habitProgressCircle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -26),
             habitProgressCircle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 47),
+            habitProgressCircle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -26),
             habitProgressCircle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -47)
         ]
 
@@ -78,21 +94,10 @@ class HabitCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        habitProgressCircle.layer.cornerRadius = habitProgressCircle.frame.height / 2
-
+                
         setupLayout()
-        print(HabitsStore.shared.habits.count)
-
+        
         backgroundColor = .white
         layer.cornerRadius = 8
-    }
-    
-    func configure(_ habit: Habit) {
-        habitHeaderText.text = habit.name
-        habitHeaderText.textColor = habit.color
-        habitTimeText.text = habit.dateString
-        habitTimeIntervalText.text = String("Подряд \(habit.trackDates.count)")
-        habitProgressCircle.layer.borderColor = habit.color.cgColor
     }
 }

@@ -14,6 +14,10 @@
 		753E62CB2558145700F14F6B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E62CA2558145700F14F6B /* TabBarViewController.swift */; };
 		7547144525603CDD005B734D /* UIViewToAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547144425603CDD005B734D /* UIViewToAutoLayout.swift */; };
 		7547144B25603FF4005B734D /* InfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7547144A25603FF4005B734D /* InfoText.swift */; };
+		7549CC002573FDD000D9037A /* HabitWithIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549CBFF2573FDD000D9037A /* HabitWithIndex.swift */; };
+		7549CC052574270C00D9037A /* TapGestureRecognizerWithIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549CC042574270C00D9037A /* TapGestureRecognizerWithIndex.swift */; };
+		7586D61325696EE400536662 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586D61225696EE400536662 /* HabitDetailsViewController.swift */; };
+		7586D6162569706500536662 /* HabitDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7586D6152569706500536662 /* HabitDetailsTableViewCell.swift */; };
 		75A0EBA725581B0D001910F8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0EBA625581B0D001910F8 /* InfoViewController.swift */; };
 		75A0EBAA25581B24001910F8 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0EBA925581B24001910F8 /* HabitsViewController.swift */; };
 		75CAEE2125614C2A0015EB95 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CAEE2025614C2A0015EB95 /* HabitViewController.swift */; };
@@ -31,11 +35,16 @@
 		753E62CA2558145700F14F6B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		7547144425603CDD005B734D /* UIViewToAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewToAutoLayout.swift; sourceTree = "<group>"; };
 		7547144A25603FF4005B734D /* InfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoText.swift; sourceTree = "<group>"; };
+		7549CBFF2573FDD000D9037A /* HabitWithIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitWithIndex.swift; sourceTree = "<group>"; };
+		7549CC042574270C00D9037A /* TapGestureRecognizerWithIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerWithIndex.swift; sourceTree = "<group>"; };
+		7586D61225696EE400536662 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
+		7586D6152569706500536662 /* HabitDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		75A0EBA625581B0D001910F8 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		75A0EBA925581B24001910F8 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		75CAEE2025614C2A0015EB95 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		75CAEE23256188780015EB95 /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		75CAEE2625618B7A0015EB95 /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		75DF4AEE2574663900F7399A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +77,11 @@
 		753E62A22557F93E00F14F6B /* MyHabits_App */ = {
 			isa = PBXGroup;
 			children = (
-				7547144325603C8D005B734D /* Helpers */,
-				753E62CD2558182C00F14F6B /* Tab Bar */,
 				75A0EBA425581AB7001910F8 /* Habits */,
 				75A0EBA325581AAF001910F8 /* Info */,
 				753E62B8255800AA00F14F6B /* Storage */,
+				753E62CD2558182C00F14F6B /* Tab Bar */,
+				7547144325603C8D005B734D /* Helpers */,
 				753E62A32557F93E00F14F6B /* AppDelegate.swift */,
 				753E62AC2557F93E00F14F6B /* Assets.xcassets */,
 				753E62AE2557F93E00F14F6B /* LaunchScreen.storyboard */,
@@ -102,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				7547144425603CDD005B734D /* UIViewToAutoLayout.swift */,
+				7549CBFF2573FDD000D9037A /* HabitWithIndex.swift */,
+				7549CC042574270C00D9037A /* TapGestureRecognizerWithIndex.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -128,6 +139,7 @@
 			children = (
 				75CAEE23256188780015EB95 /* ProgressCollectionViewCell.swift */,
 				75CAEE2625618B7A0015EB95 /* HabitCollectionViewCell.swift */,
+				7586D6152569706500536662 /* HabitDetailsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -135,8 +147,9 @@
 		75CAEE2A25618F000015EB95 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				75A0EBA925581B24001910F8 /* HabitsViewController.swift */,
 				75CAEE2025614C2A0015EB95 /* HabitViewController.swift */,
+				75A0EBA925581B24001910F8 /* HabitsViewController.swift */,
+				7586D61225696EE400536662 /* HabitDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,12 +230,16 @@
 				753E62CB2558145700F14F6B /* TabBarViewController.swift in Sources */,
 				7547144B25603FF4005B734D /* InfoText.swift in Sources */,
 				75CAEE2125614C2A0015EB95 /* HabitViewController.swift in Sources */,
+				7549CC002573FDD000D9037A /* HabitWithIndex.swift in Sources */,
+				7586D61325696EE400536662 /* HabitDetailsViewController.swift in Sources */,
 				75A0EBA725581B0D001910F8 /* InfoViewController.swift in Sources */,
 				75CAEE24256188780015EB95 /* ProgressCollectionViewCell.swift in Sources */,
 				75A0EBAA25581B24001910F8 /* HabitsViewController.swift in Sources */,
 				7547144525603CDD005B734D /* UIViewToAutoLayout.swift in Sources */,
 				753E62A42557F93E00F14F6B /* AppDelegate.swift in Sources */,
 				75CAEE2725618B7A0015EB95 /* HabitCollectionViewCell.swift in Sources */,
+				7549CC052574270C00D9037A /* TapGestureRecognizerWithIndex.swift in Sources */,
+				7586D6162569706500536662 /* HabitDetailsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +250,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				753E62AF2557F93E00F14F6B /* Base */,
+				75DF4AEE2574663900F7399A /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -362,7 +380,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7FBKGHVJBQ;
 				INFOPLIST_FILE = MyHabits_App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +400,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7FBKGHVJBQ;
 				INFOPLIST_FILE = MyHabits_App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
