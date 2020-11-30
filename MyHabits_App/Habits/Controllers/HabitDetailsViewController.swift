@@ -101,9 +101,8 @@ extension HabitDetailsViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HabitDetailsTableViewCell.self), for: indexPath) as! HabitDetailsTableViewCell
         let date = HabitsStore.shared.dates[indexPath.row]
-        let habitStore = HabitsStore.shared
         
-        cell.configure(habitStore, index: indexPath.item)
+        cell.configure(indexPath.item)
 
         if HabitsStore.shared.habit(habit!.customHabit, isTrackedIn: date) {
             cell.accessoryType = .checkmark

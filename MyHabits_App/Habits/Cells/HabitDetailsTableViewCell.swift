@@ -10,13 +10,6 @@ import UIKit
 class HabitDetailsTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    private var habitsStore: HabitsStore? {
-        didSet {
-            guard let habitsStore = habitsStore else { return }
-            
-            configure(habitsStore, index: 0)
-        }
-    }
     private lazy var dateName: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
@@ -25,8 +18,8 @@ class HabitDetailsTableViewCell: UITableViewCell {
     }()
     
     // MARK: - Configures
-    func configure(_ habitsStore: HabitsStore, index: Int) {
-        dateName.text = habitsStore.trackDateString(forIndex: index)
+    func configure(_ index: Int) {
+        dateName.text = HabitsStore.shared.trackDateString(forIndex: index)
     }
     
     // MARK: - Subview Funcs

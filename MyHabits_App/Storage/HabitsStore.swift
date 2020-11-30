@@ -133,6 +133,7 @@ public final class HabitsStore {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ru")
         formatter.doesRelativeDateFormatting = true
         return formatter
     }()
