@@ -66,12 +66,13 @@ class HabitsViewController: UIViewController {
             
             let cell = collectionView.cellForItem(at: sender.indexPath!) as! HabitCollectionViewCell
             
-            UIView.animateKeyframes(withDuration: 1, delay: 0.6, options: []) {
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 1) {
-                    cell.habitProgressCircle.backgroundColor = .clear
-                    cell.habitProgressCircle.image = UIImage(systemName: "checkmark.circle.fill")
+            UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.autoreverse]) {
+                UIView.addKeyframe(withRelativeStartTime: 1, relativeDuration: 0) {
+                    cell.habitProgressCircle.alpha = 1
                 }
             } completion: { finished in }
+        } else {
+            HabitsStore.shared.untrack(habit)
         }
         
         collectionView.reloadData()

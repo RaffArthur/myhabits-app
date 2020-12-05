@@ -42,7 +42,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     }()
     lazy var habitProgressCircle: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .white
+        iv.backgroundColor = .none
         iv.isUserInteractionEnabled = true
         
         return iv
@@ -57,9 +57,11 @@ class HabitCollectionViewCell: UICollectionViewCell {
         
         if habit.isAlreadyTakenToday {
             habitProgressCircle.tintColor = habit.color
+            habitProgressCircle.alpha = 1
             habitProgressCircle.image = UIImage(systemName: "checkmark.circle.fill")
         } else {
             habitProgressCircle.tintColor = habit.color
+            habitProgressCircle.alpha = 1
             habitProgressCircle.image = UIImage(systemName: "circle")
         }
     }

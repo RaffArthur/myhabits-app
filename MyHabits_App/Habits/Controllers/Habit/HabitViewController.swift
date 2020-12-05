@@ -83,8 +83,8 @@ class HabitViewController: UIViewController {
     private lazy var timeSelection: UIDatePicker = {
         let dp = UIDatePicker()
         dp.datePickerMode = .time
-        dp.timeZone = .current
-    
+        dp.timeZone = .autoupdatingCurrent
+        
         return dp
     }()
     private lazy var deleteHabitButton: UIButton = {
@@ -212,10 +212,6 @@ class HabitViewController: UIViewController {
         ]
 
         NSLayoutConstraint.activate(constraints)
-        
-        if isInEditMode {
-            deleteHabitButton.isHidden = false
-        }
     }
 
     override func viewDidLoad() {
@@ -224,14 +220,15 @@ class HabitViewController: UIViewController {
         if let mode = isInEditMode {
             if isInEditMode == true {
                 title = "Править"
-                
+                deleteHabitButton.isHidden = false
+
                 setupLayout(mode)
                             
                 if let habitToEdit = habit { setupEditMode(habitToEdit.customHabit) }
             } else {
                 title = "Создать"
                 
-                setupLayout( mode)
+                setupLayout(mode)
             }
         }
         

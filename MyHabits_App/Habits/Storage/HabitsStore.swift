@@ -149,6 +149,13 @@ public final class HabitsStore {
         save()
     }
     
+    /// Удаляет текущую дату в trackDates для переданной привычки.
+    /// - Parameter habit: Привычка, в которую добавится новая дата.
+    public func untrack(_ habit: Habit) {
+        habit.trackDates.remove(at: .init())
+        save()
+    }
+    
     /// Возвращает отформатированное время для даты.
     /// - Parameter index: Индекс в массиве dates.
     public func trackDateString(forIndex index: Int) -> String? {

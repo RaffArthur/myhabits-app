@@ -79,7 +79,6 @@
 			children = (
 				75A0EBA425581AB7001910F8 /* Habits */,
 				75A0EBA325581AAF001910F8 /* Info */,
-				753E62B8255800AA00F14F6B /* Storage */,
 				753E62CD2558182C00F14F6B /* Tab Bar */,
 				7547144325603C8D005B734D /* Helpers */,
 				753E62A32557F93E00F14F6B /* AppDelegate.swift */,
@@ -94,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				753E62B9255800FF00F14F6B /* HabitsStore.swift */,
-				7547144A25603FF4005B734D /* InfoText.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -120,7 +118,8 @@
 		75A0EBA325581AAF001910F8 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				75A0EBA625581B0D001910F8 /* InfoViewController.swift */,
+				75E2FA95257C2FFE0079053D /* Controllers */,
+				75E2FA94257C2FF40079053D /* Storage */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -130,6 +129,7 @@
 			children = (
 				75CAEE2A25618F000015EB95 /* Controllers */,
 				75CAEE2925618E8F0015EB95 /* Cells */,
+				753E62B8255800AA00F14F6B /* Storage */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -137,9 +137,9 @@
 		75CAEE2925618E8F0015EB95 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				75CAEE23256188780015EB95 /* ProgressCollectionViewCell.swift */,
-				75CAEE2625618B7A0015EB95 /* HabitCollectionViewCell.swift */,
-				7586D6152569706500536662 /* HabitDetailsTableViewCell.swift */,
+				75E2FA8F257C2ED60079053D /* Habit */,
+				75E2FA8E257C2EA60079053D /* HabitDetails */,
+				75E2FA8D257C2EA00079053D /* Progress */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -147,9 +147,73 @@
 		75CAEE2A25618F000015EB95 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				75E2FA90257C2F140079053D /* Habit */,
+				75E2FA92257C2F350079053D /* HabitDetails */,
+				75E2FA91257C2F1C0079053D /* HabitsList */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		75E2FA8D257C2EA00079053D /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				75CAEE23256188780015EB95 /* ProgressCollectionViewCell.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		75E2FA8E257C2EA60079053D /* HabitDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7586D6152569706500536662 /* HabitDetailsTableViewCell.swift */,
+			);
+			path = HabitDetails;
+			sourceTree = "<group>";
+		};
+		75E2FA8F257C2ED60079053D /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				75CAEE2625618B7A0015EB95 /* HabitCollectionViewCell.swift */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		75E2FA90257C2F140079053D /* Habit */ = {
+			isa = PBXGroup;
+			children = (
 				75CAEE2025614C2A0015EB95 /* HabitViewController.swift */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		75E2FA91257C2F1C0079053D /* HabitsList */ = {
+			isa = PBXGroup;
+			children = (
 				75A0EBA925581B24001910F8 /* HabitsViewController.swift */,
+			);
+			path = HabitsList;
+			sourceTree = "<group>";
+		};
+		75E2FA92257C2F350079053D /* HabitDetails */ = {
+			isa = PBXGroup;
+			children = (
 				7586D61225696EE400536662 /* HabitDetailsViewController.swift */,
+			);
+			path = HabitDetails;
+			sourceTree = "<group>";
+		};
+		75E2FA94257C2FF40079053D /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				7547144A25603FF4005B734D /* InfoText.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		75E2FA95257C2FFE0079053D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				75A0EBA625581B0D001910F8 /* InfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

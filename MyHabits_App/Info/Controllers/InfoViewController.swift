@@ -19,12 +19,13 @@ class InfoViewController: UIViewController {
     }()
     private lazy var infoTextMain: UITextView = {
         let tf = UITextView()
-        tf.showsVerticalScrollIndicator = true
-        tf.textAlignment = .left
         tf.isEditable = false
         tf.isScrollEnabled = true
+        tf.showsVerticalScrollIndicator = false
+        tf.textAlignment = .left
         tf.text = String(describing: infoText.mainText)
         tf.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        tf.layer.cornerRadius = 8
 
         return tf
     }()
@@ -43,7 +44,7 @@ class InfoViewController: UIViewController {
             infoTextMain.topAnchor.constraint(equalTo: infoTextHeader.bottomAnchor, constant: 16),
             infoTextMain.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             infoTextMain.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            infoTextMain.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            infoTextMain.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -22)
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -54,7 +55,7 @@ class InfoViewController: UIViewController {
         
         setupLayout()
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "silver_light")
         
         title = "Информация"
     }
