@@ -176,8 +176,7 @@ class HabitViewController: UIViewController {
                               colorSelection,
                               timeSelectionHeader,
                               timeSelectionSubheader,
-                              timeSelection
-                              )
+                              timeSelection)
             
         let constraints = [
             deleteHabitButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),

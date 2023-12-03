@@ -59,12 +59,14 @@ class HabitsViewController: UIViewController {
     }
     
     @objc private func habitProgressCircleTapped(sender: TapGestureRecognizerWithIndex) {
-        let habit = HabitsStore.shared.habits[sender.indexPath!.item]
+        
+        guard let indexPath = sender.indexPath else { return }
+        let habit = HabitsStore.shared.habits[indexPath.item]
         
         if !habit.isAlreadyTakenToday {
             HabitsStore.shared.track(habit)
             
-            let cell = collectionView.cellForItem(at: sender.indexPath!) as! HabitCollectionViewCell
+            let cell = collectionView.cellForItem(at: indexPath) as! HabitCollectionViewCell
             
             UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.autoreverse]) {
                 UIView.addKeyframe(withRelativeStartTime: 1, relativeDuration: 0) {
@@ -132,8 +134,7 @@ extension HabitsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let progressCell: ProgressCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ProgressCollectionViewCell.self), for: indexPath) as! ProgressCollectionViewCell
-            
-            progressCell.configure(HabitsStore.shared)
+            progressCell.habitsStore = HabitsStore.shared
                         
             return progressCell
         } else {

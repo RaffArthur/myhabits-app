@@ -10,10 +10,11 @@ import UIKit
 class ProgressCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    private var habitsStore: HabitsStore? {
+    
+    var habitsStore: HabitsStore? {
         didSet {
             guard let habitsStore = habitsStore else { return }
-            
+
             configure(habitsStore)
         }
     }

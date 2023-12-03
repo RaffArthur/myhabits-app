@@ -13,7 +13,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     var habit: Habit? {
         didSet {
             guard let habit = habit else { return }
-            
+             
             configure(habit)
         }
     }
@@ -37,7 +37,6 @@ class HabitCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 13, weight: .regular)
         label.textColor = UIColor(named: "silver_mid")
 
-        
         return label
     }()
     lazy var habitProgressCircle: UIImageView = {

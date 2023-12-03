@@ -8,7 +8,7 @@
 import UIKit
 
 /// Класс для хранения данных о привычке.
-public final class Habit: Codable {
+public final class Habit: Codable { 
     
     /// Название привычки.
     public var name: String
@@ -93,7 +93,7 @@ extension Habit: Equatable {
 }
 
 /// Класс для сохранения и изменения привычек пользователя.
-public final class HabitsStore {
+public final class HabitsStore { 
     
     /// Синглтон для изменения состояния привычек из разных модулей.
     public static let shared: HabitsStore = .init()
